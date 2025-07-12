@@ -53,7 +53,6 @@ public class StoreController {
 	@PostMapping("/login")
 	public ResponseEntity<String> login(@RequestBody UserDto user) {
 		try {
-			System.out.println("Hello");
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUserName(), user.getPassword()));
 			String token=jwtUtil.generateToken(user.getUserName());
 			return new ResponseEntity<String>(token,HttpStatus.OK);
