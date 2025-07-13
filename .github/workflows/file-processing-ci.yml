@@ -31,6 +31,14 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Run Junit tests
       run:  mvn test
+    - name: Build and push docker image
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with:
+        image: sayanhub1996/springboot-app
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+           
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
