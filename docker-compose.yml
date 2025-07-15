@@ -14,7 +14,7 @@ services:
     networks:
       - app-network
   web:
-    image: currency-exchange-service
+    image: fileprocessing-mail
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/fileProcessing
       SPRING_DATASOURCE_USERNAME: postgres
