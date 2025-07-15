@@ -14,7 +14,7 @@ services:
     networks:
       - app-network
   web:
-    image: fileprocessing-mail
+    image: sayanhub1996/springboot-app:latest
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/fileProcessing
       SPRING_DATASOURCE_USERNAME: postgres
